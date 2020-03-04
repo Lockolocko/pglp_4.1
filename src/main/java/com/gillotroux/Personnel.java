@@ -6,8 +6,8 @@ public final class Personnel {
     private final String nom;
     private final String prenom;
     private final LocalDate dateDeNaissance;
-    private final list<int> numeroFixPro;
-    private final list<int> numeroFixPer;
+    private final int numeroFixPro;
+    private final int numeroFixPer;
     
     private Personnel(Builder builder){
     	// Required parameters
@@ -18,8 +18,21 @@ public final class Personnel {
     }
     
     public static class Builder{
+    	// Required parameters
         private final String nom;
         private final String prenom;
+        private final LocalDate dateDeNaissance;
+        
+        // Optionnal parameters
+        private int numeroFixPro;
+        private int numeroFixPer;
+        
+        public Builder(String nom,String prenom){
+            this.nom=nom;
+            this.prenom=prenom;
+        }
+        
+        
     }
     
     
