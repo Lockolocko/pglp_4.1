@@ -36,6 +36,19 @@ public final class Personnel {
             this.dateDeNaissance=dateDeNaissance;
         }
         
+        // Fonction des parameters optionnal
+        public Builder numeroFixPro(int numero) {
+        	numeroFixPro=numero;
+        	return this;
+        	
+        }
+        
+        public Builder numeroFixPer(int numero) {
+        	numeroFixPer=numero;
+        	return this;
+        	
+        }
+        
         public Personnel build(){
            return new Personnel(this);
         }
