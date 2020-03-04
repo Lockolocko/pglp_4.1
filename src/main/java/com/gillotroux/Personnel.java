@@ -6,11 +6,22 @@ public final class Personnel {
     private final String nom;
     private final String prenom;
     private final LocalDate dateDeNaissance;
-    private final int numeroFixPro;
-    private final int numeroFixPer;
+    private final list<int> numeroFixPro;
+    private final list<int> numeroFixPer;
     
-    public Personnel(String nom,String prenom){
-    	this.nom=nom;
-    	this.prenom=prenom;
+    private Personnel(Builder builder){
+    	// Required parameters
+        nom=builder.nom;
+        prenom=builder.prenom;
+        
+        // Optionnal parameters
     }
+    
+    public static class Builder{
+        private final String nom;
+        private final String prenom;
+    }
+    
+    
+    
 }
