@@ -2,7 +2,7 @@ package com.gillotroux;
 
 import java.time.*;
 
-public final class Personnel {
+public final class Personnel implements InterfacePersonnels{
     private final String nom;
     private final String prenom;
     private final LocalDate dateDeNaissance;
@@ -55,6 +55,9 @@ public final class Personnel {
         
     }
     
+    public void print() {
+    	System.out.println(nom+" "+prenom);
+    }
     
     
 }
