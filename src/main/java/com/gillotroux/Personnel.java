@@ -1,3 +1,7 @@
+/**
+ * Package de Gillot-Roux.
+ */
+
 package com.gillotroux;
 
 import java.time.LocalDate;
