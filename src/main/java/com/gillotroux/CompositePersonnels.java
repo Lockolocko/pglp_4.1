@@ -1,7 +1,8 @@
 /**
  * Package de Gillot-Roux.
+ * @since 1.0
+ * @author Lockolocko
  */
-
 package com.gillotroux;
 
 import java.util.ArrayList;
@@ -29,21 +30,19 @@ public class CompositePersonnels implements InterfacePersonnels {
 
 /**
  * Constructeur de la classe.
- * 
- * @param id le numéro de service.
+ * @param id2 le numéro de service.
  */
 
-    public CompositePersonnels(int id) {
-        this.id = id;
+    public CompositePersonnels(final int id2) {
+        this.id = id2;
     }
 
 /**
  * Permet l'ajout d'un nouveau personnel.
- * 
  * @param personnel un membre du personnel.
  */
-	
-    public void add(Personnel personnel) {
+
+    public void add(final Personnel personnel) {
         listePersonnel.add(personnel);
     }
 
@@ -52,38 +51,38 @@ public class CompositePersonnels implements InterfacePersonnels {
  * @param liste
  */
 
-	public void add(CompositePersonnels liste) {
-		for (Personnel personnel : liste.getListe()) {
-	    listePersonnel.add(personnel);
-		}
-	}
+    public void add(final CompositePersonnels liste) {
+        for (Personnel personnel : liste.getListe()) {
+        listePersonnel.add(personnel);
+        }
+    }
 
 /**
  * Permet de récupérer la liste du personnel dans un service donné.
  * @return {@link List}
  */
 
-	public List<Personnel> getListe(){
-		return listePersonnel;
-	}
+    public List<Personnel> getListe() {
+        return listePersonnel;
+    }
 
 /**
  * Permet de retirer un employé d'un service.
  * @param personnel {@link Personnel}
  */
-	
-	public void remove(Personnel personnel) {
-	    listePersonnel.remove(personnel);
-	}
+
+    public void remove(final Personnel personnel) {
+        listePersonnel.remove(personnel);
+    }
 
 /**
  * Permet l'affichage d'un service.
  */
 
-	public void print() {
-		System.out.println("Numéro de service :" + id);
-		for (Personnel personnel : listePersonnel) {
-			personnel.print();
-		}
-	}
+    public void print() {
+        System.out.println("Numéro de service :" + id);
+        for (Personnel personnel : listePersonnel) {
+            personnel.print();
+        }
+    }
 }

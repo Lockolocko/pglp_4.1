@@ -6,6 +6,11 @@ package com.gillotroux;
 
 import java.time.LocalDate;
 
+/**
+ * Création d'un personnel.
+ * @author Lockolocko
+ *
+ */
 public final class Personnel implements InterfacePersonnels {
     private final String nom;
     private final String prenom;
