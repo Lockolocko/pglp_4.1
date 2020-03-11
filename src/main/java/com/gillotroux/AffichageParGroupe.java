@@ -31,30 +31,37 @@ new ArrayList<InterfacePersonnels>();
      */
     private class GrpIterator implements Iterator {
         /**
+         * Indice d'indexation.
+         */
+        private int verifie = 0;
+
+        /**
          * Création de l'arrayList.
          */
         GrpIterator() {
-            int verifie = 0;
             while (verifie < arr.size()) {
                 // "Instance of" pour savoir si c'est un composite:
-                //on ajoute tous les éléments du composite
+                // on ajoute tous les éléments du composite
                 // ou un Personnel: on ne fait rien
-                if (arr.iterator().next() instanceof CompositePersonnels) {
+                if (arr.get(verifie) instanceof CompositePersonnels) {
                     CompositePersonnels composite =
-(CompositePersonnels) arr.iterator().next();
+(CompositePersonnels) arr.get(verifie);
+                    arr.remove(verifie);
                     for (Personnel p1 : composite.getListe()) {
                         arr.add(p1);
                     }
                 }
                 verifie++;
             }
+            verifie = 0;
         }
+
         /**
          * Vérifie si il y a un élément suivant.
          * @return boolean
          */
         public boolean hasNext() {
-            if ((arr.iterator()).hasNext()) {
+            if (verifie < arr.size()) {
                 return true;
             }
             return false;
@@ -65,8 +72,8 @@ new ArrayList<InterfacePersonnels>();
          * @return Personnel
          */
         public InterfacePersonnels next() {
-            if (hasNext()) {
-                InterfacePersonnels perso = arr.iterator().next();
+            if (this.hasNext()) {
+                InterfacePersonnels perso = arr.get(verifie++);
                 return perso;
             }
             return null;

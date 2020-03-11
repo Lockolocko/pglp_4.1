@@ -25,20 +25,19 @@ public class TestPersonnel {
 		liste4.add(personnel6);
 		liste4.add(personnel7);
 		
-		liste4.print();
+		//liste4.print();
 		
 		liste3.add(personnel5);
 		liste3.add(liste4);
 		
-		liste3.print();
+		//liste3.print();
 		
 		liste1.add(personnel2);
 		liste1.add(liste3);
 		
-		liste1.print();
+		//liste1.print();
 		
 		AffichageParGroupe affGrp = new AffichageParGroupe(liste1);
-		
 		for(Iterator iter = affGrp.getIterator();iter.hasNext();) {
 		    iter.next().print();
 		}
