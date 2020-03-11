@@ -8,7 +8,12 @@ package com.gillotroux;
 public interface Iterator<T> {
     /**
      * Retourne vrai si la liste contient un élément suivant.
-     * @return
+     * @return boolean
      */
     boolean hasNext();
+    /**
+     * Retourne l'élément suivant.
+     * @return T
+     */
+    T next();
 }
