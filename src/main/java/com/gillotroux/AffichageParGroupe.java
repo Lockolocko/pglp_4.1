@@ -14,7 +14,7 @@ public class AffichageParGroupe {
     /**
      * ArrayList.
      */
-    private ArrayList<InterfacePersonnels> arr;
+    private ArrayList<InterfacePersonnels> arr = new ArrayList<InterfacePersonnels>();
 
     /**
      * Constructeur.
@@ -38,14 +38,11 @@ public class AffichageParGroupe {
                 // "Instance of" pour savoir si c'est un composite:
                 //on ajoute tous les éléments du composite
                 // ou un Personnel: on ne fait rien
-                if (arr.iterator().next() instanceof Personnel) {
-                    Personnel p = (Personnel) arr.iterator().next();
-                    p.print();
-                } else {
+                if (arr.iterator().next() instanceof CompositePersonnels) {
                     CompositePersonnels composite =
 (CompositePersonnels) arr.iterator().next();
                     for (Personnel p1 : composite.getListe()) {
-                        p1.print();
+                        arr.add(p1);
                     }
                 }
                 verifie++;

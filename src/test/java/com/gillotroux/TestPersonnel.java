@@ -36,6 +36,13 @@ public class TestPersonnel {
 		liste1.add(liste3);
 		
 		liste1.print();
+		
+		AffichageParGroupe affGrp = new AffichageParGroupe(liste1);
+		
+		for(Iterator iter = affGrp.getIterator();iter.hasNext();) {
+		    iter.next().print();
+		}
+		
 	}
 
 }
