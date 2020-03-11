@@ -14,7 +14,8 @@ public class AffichageParGroupe {
     /**
      * ArrayList.
      */
-    private ArrayList<InterfacePersonnels> arr = new ArrayList<InterfacePersonnels>();
+    private ArrayList<InterfacePersonnels> arr =
+new ArrayList<InterfacePersonnels>();
 
     /**
      * Constructeur.
