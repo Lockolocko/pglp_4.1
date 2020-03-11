@@ -4,7 +4,12 @@
  * @author Lockolocko
  */
 package com.gillotroux;
-
+/**
+ * Iterateur.
+ * @author Lockolocko
+ *
+ * @param <T>
+ */
 public interface Iterator<T> {
     /**
      * Retourne vrai si la liste contient un élément suivant.
