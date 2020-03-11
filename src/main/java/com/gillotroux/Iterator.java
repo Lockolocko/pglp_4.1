@@ -7,10 +7,8 @@ package com.gillotroux;
 /**
  * Iterateur.
  * @author Lockolocko
- *
- * @param <T>
  */
-public interface Iterator<T> {
+public interface Iterator {
     /**
      * Retourne vrai si la liste contient un élément suivant.
      * @return boolean
@@ -18,7 +16,7 @@ public interface Iterator<T> {
     boolean hasNext();
     /**
      * Retourne l'élément suivant.
-     * @return T
+     * @return InterfacePersonnels;
      */
-    T next();
+    InterfacePersonnels next();
 }

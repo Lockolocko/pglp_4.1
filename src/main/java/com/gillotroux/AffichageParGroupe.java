@@ -2,28 +2,57 @@
  * Package de Gillot-Roux
  */
 package com.gillotroux;
+
+import java.util.ArrayList;
+
 /**
  * Affichage par groupe.
  * @author Lockolocko
  *
  */
 public class AffichageParGroupe {
-    private Arraylist<InterfacePersonnels> Arr;
-    
-    private class GrpIterator implements Iterator{
-
+    /**
+     * ArrayList 
+     */
+    private ArrayList<InterfacePersonnels> Arr;
+    /**
+     * Groupe iterateur.
+     * @author Lockolocko
+     *
+     */
+    private class GrpIterator implements Iterator {
+        /**
+         * Création de l'arrayList.
+         */
+        public GrpIterator() {
+            Arr=new ArrayList<InterfacePersonnels>();
+        }
+        
+        /**
+         * Vérifie si il y a un élément suivant.
+         */
         public boolean hasNext() {
-            // TODO Auto-generated method stub
+            if((Arr.iterator()).hasNext()) {
+                return true;
+            }
             return false;
         }
-
-        public Object next() {
-            // TODO Auto-generated method stub
+        /**
+         * Retourne l'élément suivant.
+         */
+        public InterfacePersonnels next() {
+            if(hasNext()) {
+                InterfacePersonnels perso=Arr.iterator().next();
+                return perso;
+            }
             return null;
         }
         
     }
-    
+    /**
+     * Donne un accès à hasNext() et next().
+     * @return Iterator
+     */
     public Iterator getIterator() {
         return new GrpIterator();
     }
